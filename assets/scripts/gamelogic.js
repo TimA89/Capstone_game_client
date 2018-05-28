@@ -16,6 +16,7 @@ const canvas = document.getElementById('canvas')
 // getContext - identifies type if drawwing 2d- is  value 2-dimensional
 // Now we have the 2D rendering context for a canvas and we can draw within it.
 const ctx = canvas.getContext('2d')
+
 // -----------------------------------------------------------
 // cross browser that we are going to run a function for animation
 const requestAnimationFrame = (function () {
@@ -36,7 +37,6 @@ canvas.height = 500
 // -----------------------------------------------------------
 
 // -----------------------------------------------------------
-let lastTime = Date.now()
 let timeOfGame = 0
 let lastFire = Date.now()
 let posX = canvas.width / 2
@@ -160,8 +160,8 @@ const render = function () {
   updateEntities()
 }
 
-const enemies = function (dt) {
-  timeOfGame += dt
+const enemies = function () {
+  timeOfGame += 0.015
   if (Math.random() < 1 - Math.pow(0.993, timeOfGame)) {
     const enemyX = Math.random() * canvas.width
     if (enemyX > 0 && enemyX < canvas.width - enemyWidth) {
@@ -247,25 +247,32 @@ const checkCollisions = function () {
     }
   }
 }
+let pause = false
+const togglePause = function () {
+  pause = !pause
+  if (!pause) {
+    game()
+  }
+}
+
+$('#pause').on('click', togglePause)
 
 // main loop of the game
-function game () {
-  console.log('game')
-  const now = Date.now()
-  const dt = (now - lastTime) / 1000.0
-  // creates a loop for animation
-  enemies(dt)
-  render()
-  hero()
+const game = function () {
+  if (!pause) {
+    // creates a loop for animation
+    enemies()
+    render()
+    hero()
 
-  requestAnimationFrame(game)
-  lastTime = now
-  checkCollisions()
-  for (let i = 0; i < explosions.length; i++) {
-    explosions[i].draw()
-    setTimeout(function () { explosions.splice(0, 1) }, 1000 / 10)
+    requestAnimationFrame(game)
+    checkCollisions()
+    for (let i = 0; i < explosions.length; i++) {
+      explosions[i].draw()
+      setTimeout(function () { explosions.splice(0, 1) }, 1000 / 10)
+    }
+    $('#score').text(score)
   }
-  $('#score').text(score)
 }
 
 module.exports = game
