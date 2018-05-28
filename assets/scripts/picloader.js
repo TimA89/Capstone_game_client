@@ -26,7 +26,10 @@ const _load = function (url) {
 
       if (isReady()) {
         console.log('else if _load')
-        readyCallbacks.forEach(function (func) { func() })
+        readyCallbacks.forEach(function (func) {
+          console.log(func)
+          func()
+        })
       }
     }
     console.log('else _load')
