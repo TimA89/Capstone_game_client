@@ -251,6 +251,7 @@ const checkCollisions = function () {
 
 // main loop of the game
 function game () {
+  console.log('game')
   const now = Date.now()
   const dt = (now - lastTime) / 1000.0
   // creates a loop for animation
