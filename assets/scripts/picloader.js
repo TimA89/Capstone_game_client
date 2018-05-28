@@ -1,3 +1,4 @@
+'use strict'
 
 const picCache = {}
 const readyCallbacks = []

@@ -1,3 +1,4 @@
+'use strict'
 // require event listener for keys
 const input = require('./input')
 
