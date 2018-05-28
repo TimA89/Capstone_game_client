@@ -1,22 +1,20 @@
+// require event listener for keys
 const input = require('./input')
+
+// require all pictures
+const alien1 = require('../../img/alien1.png')
+// const alien2 = require('../../img/alien2.png')
+const hero1 = require('../../img/hero1.png')
+// const hero2 = require('../../img/hero2.png')
+const blast = require('../../img/blast.png')
+const explosion1 = require('../../img/explosion1.png')
+// const explosion2 = require('../../img/explosion2.png')
+
+// -----------------------------------------------------------
 const canvas = document.getElementById('canvas')
 // getContext - identifies type if drawwing 2d- is  value 2-dimensional
 // Now we have the 2D rendering context for a canvas and we can draw within it.
 const ctx = canvas.getContext('2d')
-require('../../img/alien1.png')
-require('../../img/alien2.png')
-require('../../img/hero1.png')
-require('../../img/hero2.png')
-require('../../img/blast.png')
-require('../../img/explosion1.png')
-require('../../img/explosion2.png')
-// const alien1 = require('../../img/alien1.png')
-// const alien2 = require('../../img/alien2.png')
-const hero1 = require('../../img/hero1.png')
-// const hero2 = require('../../img/hero2.png')
-// const blast = require('../../img/blast.png')
-// const explosion1 = require('../../img/explosion1.png')
-// const explosion2 = require('../../img/explosion2.png')
 // -----------------------------------------------------------
 // cross browser that we are going to run a function for animation
 const requestAnimationFrame = (function () {
@@ -111,7 +109,7 @@ const Bullet = function (x, y) {
 
   this.draw = function () {
     const bulletLook = new Image()
-    bulletLook.src = '../../img/blast.png'
+    bulletLook.src = blast
     ctx.drawImage(bulletLook, this.x, this.y, bulletWidth, bulletHeight)
   }
 
@@ -127,7 +125,7 @@ const Enemy = function (x, y) {
 
   this.draw = function () {
     const enemyLook = new Image()
-    enemyLook.src = 'http://tima89.github.io/img/alien1.png'
+    enemyLook.src = alien1
     ctx.drawImage(enemyLook, this.x, this.y, enemyWidth, enemyHeight)
   }
 
@@ -143,7 +141,7 @@ const Explosion = function (x, y, index) {
 
   this.draw = function () {
     const explosionLook = new Image()
-    explosionLook.src = '../../img/explosion1.png'
+    explosionLook.src = explosion1
     ctx.drawImage(explosionLook, this.x, this.y, explosionWidth, explosionHeight)
   }
 
