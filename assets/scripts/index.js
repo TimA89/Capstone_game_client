@@ -1,10 +1,10 @@
 'use strict'
 
-// use require with a reference to bundle the file and use it in this file
-// const example = require('./example')
+// const app = require('./app')
+// app()
 
-// use require without a reference to ensure a file is bundled
-// require('./example')
+const game = require('./gamelogic')
+game()
 
 $(() => {
   // your JS code goes here

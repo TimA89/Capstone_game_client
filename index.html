@@ -12,6 +12,28 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <div id="game-over-overlay">
+      </div>
+
+      <div id="game-over">
+        <h1>GAME OVER</h1>
+        <button id="play-again">Play Again</button>
+      </div>
+
+      <div class="wrapper">
+        <div id="instructions">
+          <div>
+            move with <span class="key">arrows</span> or <span class="key">wasd</span>
+          </div>
+          <div>
+            shoot with <span class="key">space</span>
+          </div>
+        </div>
+
+        <div id="score"></div>
+      </div>
+      <canvas id="canvas"></canvas>
+      <div style="display:none;">
+  </div>
     </body>
 </html>
