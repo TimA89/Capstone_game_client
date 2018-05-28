@@ -32,8 +32,10 @@ window.addEventListener('blur', function () {
   pressedKeys = {}
 })
 
+const isDown = function (key) {
+  return pressedKeys[key.toUpperCase()]
+}
+
 module.exports = {
-  isDown: function (key) {
-    return pressedKeys[key.toUpperCase()]
-  }
+  isDown
 }
