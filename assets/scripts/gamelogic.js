@@ -1,4 +1,4 @@
-const input = require('./input.js')
+const input = require('./input')
 const canvas = document.getElementById('canvas')
 // getContext - identifies type if drawwing 2d- is  value 2-dimensional
 // Now we have the 2D rendering context for a canvas and we can draw within it.
@@ -72,7 +72,7 @@ const handleInput = function () {
 
 const hero = function () {
   const heroLook = new Image()
-  heroLook.src = 'https://imgur.com/hpcj7C8'
+  heroLook.src = '../../img/hero1.png'
   ctx.drawImage(heroLook, posX, posY, heroWidth, heroHeight)
   // event listener for keys pressed
   // hero position
@@ -97,7 +97,7 @@ const Bullet = function (x, y) {
 
   this.draw = function () {
     const bulletLook = new Image()
-    bulletLook.src = 'img/blast.png'
+    bulletLook.src = '../../img/blast.png'
     ctx.drawImage(bulletLook, this.x, this.y, bulletWidth, bulletHeight)
   }
 
@@ -113,7 +113,7 @@ const Enemy = function (x, y) {
 
   this.draw = function () {
     const enemyLook = new Image()
-    enemyLook.src = 'img/alien1.png'
+    enemyLook.src = '../../img/alien1.png'
     ctx.drawImage(enemyLook, this.x, this.y, enemyWidth, enemyHeight)
   }
 
@@ -129,7 +129,7 @@ const Explosion = function (x, y, index) {
 
   this.draw = function () {
     const explosionLook = new Image()
-    explosionLook.src = 'img/explosion1.png'
+    explosionLook.src = '../../img/explosion1.png'
     ctx.drawImage(explosionLook, this.x, this.y, explosionWidth, explosionHeight)
   }
 
