@@ -72,7 +72,7 @@ const handleInput = function () {
 
 const hero = function () {
   const heroLook = new Image()
-  heroLook.src = 'img/hero1.png'
+  heroLook.src = 'https://imgur.com/hpcj7C8'
   ctx.drawImage(heroLook, posX, posY, heroWidth, heroHeight)
   // event listener for keys pressed
   // hero position
