@@ -27,7 +27,7 @@ document.addEventListener('keydown', function (e) {
 document.addEventListener('keyup', function (e) {
   setKey(e, false)
 })
-// if elene==ment lost focus we need to use 'blur'
+// if element lost focus we need to use 'blur'
 window.addEventListener('blur', function () {
   pressedKeys = {}
 })

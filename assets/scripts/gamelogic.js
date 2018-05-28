@@ -33,7 +33,7 @@ const heroHeight = 60
 const heroSpeed = 2
 const bullets = []
 const bulletWidth = 10
-const bulletHeight = 10
+const bulletHeight = 20
 const bulletSpeed = 8
 const enemy = []
 const enemyWidth = 50
@@ -72,7 +72,7 @@ const handleInput = function () {
 
 const hero = function () {
   const heroLook = new Image()
-  heroLook.src = 'img/jake.png'
+  heroLook.src = 'img/hero1.png'
   ctx.drawImage(heroLook, posX, posY, heroWidth, heroHeight)
   // event listener for keys pressed
   // hero position
@@ -97,7 +97,7 @@ const Bullet = function (x, y) {
 
   this.draw = function () {
     const bulletLook = new Image()
-    bulletLook.src = 'img/jake.png'
+    bulletLook.src = 'img/blast.png'
     ctx.drawImage(bulletLook, this.x, this.y, bulletWidth, bulletHeight)
   }
 
@@ -113,7 +113,7 @@ const Enemy = function (x, y) {
 
   this.draw = function () {
     const enemyLook = new Image()
-    enemyLook.src = 'img/jake.png'
+    enemyLook.src = 'img/alien1.png'
     ctx.drawImage(enemyLook, this.x, this.y, enemyWidth, enemyHeight)
   }
 
@@ -129,7 +129,7 @@ const Explosion = function (x, y, index) {
 
   this.draw = function () {
     const explosionLook = new Image()
-    explosionLook.src = 'img/sprites2.png'
+    explosionLook.src = 'img/explosion1.png'
     ctx.drawImage(explosionLook, this.x, this.y, explosionWidth, explosionHeight)
   }
 
@@ -142,12 +142,12 @@ const Explosion = function (x, y, index) {
 const render = function () {
   // clears a content after movement
   ctx.clearRect(0, 0, canvas.width, canvas.height)
-  hero()
+  // hero()
   handleInput()
   updateEntities()
 }
 
-const update = function (dt) {
+const enemies = function (dt) {
   timeOfGame += dt
   if (Math.random() < 1 - Math.pow(0.993, timeOfGame)) {
     const enemyX = Math.random() * canvas.width
@@ -240,7 +240,7 @@ function game () {
   const now = Date.now()
   const dt = (now - lastTime) / 1000.0
   // creates a loop for animation
-  update(dt)
+  enemies(dt)
   render()
   hero()
 
