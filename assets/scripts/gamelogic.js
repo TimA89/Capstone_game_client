@@ -10,6 +10,14 @@ require('../../img/hero2.png')
 require('../../img/blast.png')
 require('../../img/explosion1.png')
 require('../../img/explosion2.png')
+// const alien1 = require('../../img/alien1.png')
+// const alien2 = require('../../img/alien2.png')
+// const hero1 = require('../../img/hero1.png')
+// const hero2 = require('../../img/hero2.png')
+// const blast = require('../../img/blast.png')
+// const explosion1 = require('../../img/explosion1.png')
+// const explosion2 = require('../../img/explosion2.png')
+// const picLoader = require('./picloader')
 // -----------------------------------------------------------
 // cross browser that we are going to run a function for animation
 const requestAnimationFrame = (function () {
