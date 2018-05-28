@@ -12,12 +12,11 @@ require('../../img/explosion1.png')
 require('../../img/explosion2.png')
 // const alien1 = require('../../img/alien1.png')
 // const alien2 = require('../../img/alien2.png')
-// const hero1 = require('../../img/hero1.png')
+const hero1 = require('../../img/hero1.png')
 // const hero2 = require('../../img/hero2.png')
 // const blast = require('../../img/blast.png')
 // const explosion1 = require('../../img/explosion1.png')
 // const explosion2 = require('../../img/explosion2.png')
-// const picLoader = require('./picloader')
 // -----------------------------------------------------------
 // cross browser that we are going to run a function for animation
 const requestAnimationFrame = (function () {
@@ -87,7 +86,7 @@ const handleInput = function () {
 
 const hero = function () {
   const heroLook = new Image()
-  heroLook.src = '../../img/hero1.png'
+  heroLook.src = hero1
   ctx.drawImage(heroLook, posX, posY, heroWidth, heroHeight)
   // event listener for keys pressed
   // hero position
