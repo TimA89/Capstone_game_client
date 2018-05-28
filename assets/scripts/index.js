@@ -10,6 +10,7 @@ picLoader.load([
   '../../img/alien1.png',
   '../../img/alien2.png',
   '../../img/blast.png',
+  'https://github.com/TimA89/Capstone_game_client/blob/master/img/alien1.png',
   '../../img/explosion1.png',
   '../../img/explosion2.png'
 ])

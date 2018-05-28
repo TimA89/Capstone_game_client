@@ -113,7 +113,7 @@ const Enemy = function (x, y) {
 
   this.draw = function () {
     const enemyLook = new Image()
-    enemyLook.src = '../../img/alien1.png'
+    enemyLook.src = 'https://github.com/TimA89/Capstone_game_client/blob/master/img/alien1.png'
     ctx.drawImage(enemyLook, this.x, this.y, enemyWidth, enemyHeight)
   }
 
