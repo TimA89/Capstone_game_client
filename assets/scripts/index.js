@@ -2,7 +2,13 @@
 
 // const app = require('./app')
 // app()
-
+require('../../img/alien1.png')
+require('../../img/alien2.png')
+require('../../img/hero1.png')
+require('../../img/hero2.png')
+require('../../img/blast.png')
+require('../../img/explosion1.png')
+require('../../img/explosion2.png')
 const picLoader = require('./picloader')
 picLoader.load([
   '../../img/hero1.png',
@@ -10,7 +16,7 @@ picLoader.load([
   '../../img/alien1.png',
   '../../img/alien2.png',
   '../../img/blast.png',
-  'https://github.com/TimA89/Capstone_game_client/blob/master/img/alien1.png',
+  'http://tima89.github.io/img/alien1.png',
   '../../img/explosion1.png',
   '../../img/explosion2.png'
 ])

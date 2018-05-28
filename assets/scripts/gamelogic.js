@@ -3,6 +3,13 @@ const canvas = document.getElementById('canvas')
 // getContext - identifies type if drawwing 2d- is  value 2-dimensional
 // Now we have the 2D rendering context for a canvas and we can draw within it.
 const ctx = canvas.getContext('2d')
+require('../../img/alien1.png')
+require('../../img/alien2.png')
+require('../../img/hero1.png')
+require('../../img/hero2.png')
+require('../../img/blast.png')
+require('../../img/explosion1.png')
+require('../../img/explosion2.png')
 // -----------------------------------------------------------
 // cross browser that we are going to run a function for animation
 const requestAnimationFrame = (function () {
@@ -113,7 +120,7 @@ const Enemy = function (x, y) {
 
   this.draw = function () {
     const enemyLook = new Image()
-    enemyLook.src = 'https://github.com/TimA89/Capstone_game_client/blob/master/img/alien1.png'
+    enemyLook.src = 'http://tima89.github.io/img/alien1.png'
     ctx.drawImage(enemyLook, this.x, this.y, enemyWidth, enemyHeight)
   }
 
