@@ -11,14 +11,6 @@ const explosion1 = require('../../img/explosion1.png')
 const explosion2 = require('../../img/explosion2.png')
 const picLoader = require('./picloader')
 picLoader.load([
-  '../../img/hero1.png',
-  '../../img/hero2.png',
-  '../../img/alien1.png',
-  '../../img/alien2.png',
-  '../../img/blast.png',
-  'http://tima89.github.io/img/alien1.png',
-  '../../img/explosion1.png',
-  '../../img/explosion2.png',
   alien1,
   alien2,
   hero1,
