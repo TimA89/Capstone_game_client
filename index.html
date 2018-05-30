@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Space Blast</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,6 +12,22 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
+      <!-- Users messages -->
+      <p id="message"></p>
+      <div class="col-sm-3 col-xs-12 publicscore"></div>
+      <div class="col-sm-6 col-xs-12 info">
+        <div class="col-xs-12 gameimg">
+          <h2 class="welcome">Please <a class="welcome_a">SignUp</a> or <a class="welcome_a">SignIn</a> to play a game</h2>
+        </div>
+        <div class="col-xs-12 instructions">
+          <h1>Instructions:</h1>
+          <h3>Action keys:</h3>
+          <h4>Move with <span class="key">Arrow keys</span> or <span class="key">W A S D</span></h4>
+          <h4>Shoot with <span class="key">Space</span></h4>
+          <h4>Pause with <button type="button" class="btn btn-default btn-sm" id="pause">Pause</button> or <span class="key">P key</span></h4>
+        </div>
+      </div>
+
       <div id="game-over-overlay">
       </div>
 
@@ -21,21 +37,9 @@
       </div>
 
       <div class="wrapper">
-        <div id="instructions">
-          <div>
-            move with <span class="key">arrows</span> or <span class="key">wasd</span>
-          </div>
-          <div>
-            shoot with <span class="key">space</span>
-          </div>
-          <div>
-            <button id="pause">Pause</button>
-          </div>
-        </div>
 
         <div id="score"></div>
       </div>
-      <canvas id="canvas"></canvas>
       <div style="display:none;">
   </div>
     </body>

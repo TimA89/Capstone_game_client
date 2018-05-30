@@ -74,6 +74,10 @@ const handleInput = function () {
     posX += heroSpeed
   }
 
+  if (input.isDown('P')) {
+    togglePause()
+  }
+
   if (input.isDown('SPACE') && Date.now() - lastFire > 100) {
     const bulletPosX = posX + heroWidth / 2
     const bulletPosY = posY
@@ -214,7 +218,6 @@ const checkCollisions = function () {
       h: heroHeight
     })) {
       // gameOver()
-      console.log('game is done')
       break
     }
     // looping thru all bullets array indexes

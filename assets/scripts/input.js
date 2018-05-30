@@ -15,6 +15,8 @@ function setKey (event, status) {
     key = 'RIGHT'
   } else if (code === 40) {
     key = 'DOWN'
+  } else if (code === 80) {
+    key = 'P'
   } else {
     key = String.fromCharCode(code)
   }

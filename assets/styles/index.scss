@@ -4,13 +4,115 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 html, body {
     margin: 0;
     padding: 0;
-    background-color: #9E7654;
+    background-color: #2A313B;
 }
 
+#brand:hover {
+  transform: rotateY(360deg);
+  transition: 1.5s;
+        }
+
+.navbar {
+  margin-bottom: 0;
+}
+
+@font-face {
+    font-family: myFirstFont;
+    src: url(../../public/codeman38_press-start-2p/PressStart2P.ttf) format('truetype');
+}
+
+.welcome {
+  font-family: myFirstFont, 'Bookman Header';
+  line-height: 130%;
+}
+
+.welcome_a {
+  color: red;
+  text-decoration: none;
+}
+
+.welcome_a:hover {
+  opacity: 0.7;
+  color: red;
+  text-decoration: none;
+  transition: 1.5s;
+}
+
+#imggame {
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.gameimg {
+  border: 1px solid white;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: lightgrey;
+  text-align: center;
+  min-width: 300px;
+  height: 190px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.instructions {
+  border: 1px solid white;
+  border-radius: 10px;
+  background-color: rgba(179, 210, 221, 0.3);
+  margin-top: 10px;
+  min-width: 300px;
+  height: 290px;
+  width: 100%;
+}
+
+.info {
+  height: 500px;
+  margin: 0 10px;
+  min-width: 300px;
+  padding: 0;
+}
+
+.publicscore {
+  margin: 0 10px 20px 10px;
+  min-width: 300px;
+  float: left;
+  border: 1px solid white;
+  border-radius: 10px;
+  background-color: rgba(179, 210, 221, 0.3);
+  height: 500px;
+}
+
+@media only screen and (max-width: 450px) {
+    .publicscore {
+      float: none;
+      margin: auto;
+      width: 100%
+    }
+
+    .info {
+      float:none;
+      margin: auto;
+      width: 100%
+    }
+
+    .welcome {
+      text-decoration: none;
+      font-size: 20px;
+    }
+}
+
+#message {
+  height: 51px;
+}
+
+.alert-danger {
+  background-color: #eab9b9;
+}
 canvas {
     display: block;
     margin: auto;
-    background-image: url('../../img/background.jpg');
+    // background-image: url('../../img/background.jpg');
     // background-image: url('../../img/background2.jpg');
     position: absolute;
     top: 0;
@@ -38,7 +140,7 @@ canvas {
 }
 
 .key {
-    color: #aaffdd;
+    color: white;
 }
 
 #game-over, #game-over-overlay {
@@ -73,10 +175,3 @@ canvas {
 #game-over button {
     font-size: 1.5em;
 }
-/* #canvas {
-  border: 1px solid black
-}
-
-body {
-  margin: 0;
-} */

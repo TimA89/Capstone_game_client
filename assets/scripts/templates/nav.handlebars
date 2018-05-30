@@ -1,0 +1,20 @@
+<nav class="navbar navbar-inverse gamemode">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <!-- Brand name -->
+      <a class="navbar-brand" id="brand">Space Blast</a>
+    </div>
+    <!-- All navigation to the right side -->
+    <ul class="nav navbar-nav navbar-right">
+      <!-- Explanation on Sign Out -->
+      <li>
+        <a class="sign-out"><span class="glyphicon glyphicon-log-out"></span> Sign Out</a>
+      </li>
+      <!-- Explanation on Password Change anchor -->
+      <li><a data-toggle="modal" data-target="#modal3" class="a-change-pass"><span class="glyphicon glyphicon-edit"></span> Change Password</a></li>
+      <div class="modal fade" id="modal3" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+{{> changePW}}
+      </div>
+    </ul>
+  </div>
+</nav>
