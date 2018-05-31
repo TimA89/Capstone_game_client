@@ -42,7 +42,6 @@ const onSignOut = function (event) {
   event.preventDefault()
   game.reset()
   game.togglePause()
-  event.preventDefault()
   const data = getFormFields(event.target)
   api.signOut(data)
     .then(ui.signOutSuccess)

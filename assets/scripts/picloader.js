@@ -18,12 +18,12 @@ const load = function (urlOrArr) {
 
 const _load = function (url) {
   if (picCache[url]) {
-    if (isReady()) {
-      console.log('pic')
-      readyCallbacks.forEach(function (func) {
-        func()
-      })
-    }
+    // if (isReady()) {
+    //   console.log('pic')
+    //   readyCallbacks.forEach(function (func) {
+    //     func()
+    //   })
+    // }
     // readyCallbacks.forEach(function (func) {
     //   func()
     // })

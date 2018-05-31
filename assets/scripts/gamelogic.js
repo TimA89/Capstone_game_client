@@ -283,6 +283,7 @@ const togglePause = function () {
 
 // main loop of the game
 const game = function () {
+  console.log('game is')
   if (!pause) {
     // creates a loop for animation
     enemies()

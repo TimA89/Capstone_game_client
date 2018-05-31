@@ -6,24 +6,19 @@ const ui = require('./ui')
 const game = require('../gamelogic')
 
 // require pic loader
-const picLoader = require('../picloader')
+// const picLoader = require('../picloader')
 
-const alien1 = require('../../../img/alien1.png')
-const hero1 = require('../../../img/hero1.png')
-const blast = require('../../../img/blast.png')
-const explosion1 = require('../../../img/explosion1.png')
+// const alien1 = require('../../../img/alien1.png')
+// const hero1 = require('../../../img/hero1.png')
+// const blast = require('../../../img/blast.png')
+// const explosion1 = require('../../../img/explosion1.png')
 
-const start = function () {
-  console.log('startOutter')
-  // loading pix
-  picLoader.load([
-    alien1,
-    hero1,
-    blast,
-    explosion1
-  ])
-  picLoader.onReady(game.start)
-}
+// const start = function () {
+//   console.log('startOutter')
+//   // loading pix
+//
+//   picLoader.onReady(game.start)
+// }
 
 // getting all public high scores
 const onGetAllScores = () => {
@@ -42,7 +37,7 @@ const onMyAllScores = () => {
 const onGetStart = () => {
   api.getStart()
     .then(ui.getStartSuccess)
-    .then(() => start())
+    .then(() => game.start())
     .catch(ui.getStartFailure)
 }
 
