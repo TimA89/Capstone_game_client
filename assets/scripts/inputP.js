@@ -1,5 +1,6 @@
 'use strict'
 
+const gameLogic = require('./gamelogic')
 let pressedKeys = {}
 // ties together keyCode of button with keys that pressed during game
 function setKey (event, status) {
@@ -7,18 +8,9 @@ function setKey (event, status) {
   const code = event.keyCode
   let key
   // checks which key is pressed
-  if (code === 32) {
-    key = 'SPACE'
-  } else if (code === 37) {
-    key = 'LEFT'
-  } else if (code === 38) {
-    key = 'UP'
-  } else if (code === 39) {
-    key = 'RIGHT'
-  } else if (code === 40) {
-    key = 'DOWN'
-  } else if (code === 70) {
-    key = 'F'
+  if (code === 80) {
+    gameLogic.togglePause()
+    // key = 'P'
   } else {
     key = String.fromCharCode(code)
   }

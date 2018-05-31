@@ -3,6 +3,12 @@
 // require event listener for keys
 const input = require('./input')
 
+// require event listener for keys
+const api = require('./game-actions/api')
+
+// require event listener for keys
+const ui = require('./game-actions/ui')
+
 // require all pictures
 const alien1 = require('../../img/alien1.png')
 // const alien2 = require('../../img/alien2.png')
@@ -45,15 +51,20 @@ let posY = 440
 const heroWidth = 60
 const heroHeight = 60
 const heroSpeed = 2
-const bullets = []
+let bullets = []
 const bulletWidth = 10
 const bulletHeight = 20
 const bulletSpeed = 8
-const enemy = []
+let enemy = []
 const enemyWidth = 50
 const enemyHeight = 50
 const enemySpeed = 1
-let score = 0
+
+const gameData = {
+  score: 0,
+  over: false
+}
+
 const explosions = []
 const explosionWidth = 40
 const explosionHeight = 40
@@ -73,6 +84,18 @@ const handleInput = function () {
 
   if (input.isDown('RIGHT') || input.isDown('d')) {
     posX += heroSpeed
+  }
+
+  // if (input.isDown('p')) {
+  //   togglePause()
+  // }
+
+  if (input.isDown('f') && Date.now() - lastFire > 100) {
+    const bulletPosX = posX + heroWidth / 2
+    const bulletPosY = posY
+    bullets.push(new Bullet(bulletPosX, bulletPosY))
+    // filters all bullets that have been added to array, instead of 100 per second only 10 added
+    lastFire = Date.now()
   }
 
   if (input.isDown('SPACE') && Date.now() - lastFire > 100) {
@@ -213,7 +236,7 @@ const checkCollisions = function () {
       w: heroWidth,
       h: heroHeight
     })) {
-      // gameOver()
+      gameOver()
       break
     }
     // looping thru all bullets array indexes
@@ -239,23 +262,24 @@ const checkCollisions = function () {
         bullets.splice(k, 1)
         k--
         // updating score
-        score += 100
+        gameData.score += 100
 
         break
       }
     }
   }
 }
+
 let pause = false
 
 const togglePause = function () {
+  console.log('toggled')
   pause = !pause
   if (!pause) {
+    console.log('gameToggle')
     game()
   }
 }
-
-$('#pause').on('click', togglePause)
 
 // main loop of the game
 const game = function () {
@@ -271,11 +295,45 @@ const game = function () {
       explosions[i].draw()
       setTimeout(function () { explosions.splice(0, 1) }, 1000 / 10)
     }
-    $('#score').text(score)
+    $('#score').text(gameData.score)
   }
+}
+// starting game
+const start = function () {
+  console.log('startInner')
+  pause = false
+  console.log('gameStart')
+  game()
+}
+
+// game over events
+const gameOver = function () {
+  pause = true
+  gameData.over = true
+  api.gameUpdate(gameData)
+    .then(ui.gameUpdateSuccess)
+    .catch(ui.gameUpdateFailure)
+}
+
+const reset = function () {
+  ctx.clearRect(0, 0, canvas.width, canvas.height)
+  console.log('1')
+  pause = false
+  gameData.score = 0
+  gameData.over = false
+  timeOfGame = 0
+  enemy = []
+  bullets = []
+  posX = canvas.width / 2
+  posY = 440
+  ctx.clearRect(0, 0, canvas.width, canvas.height)
+  console.log('2')
 }
 
 module.exports = {
-  game: game,
-  togglePause: togglePause
+  start,
+  togglePause,
+  gameData,
+  reset,
+  gameOver
 }

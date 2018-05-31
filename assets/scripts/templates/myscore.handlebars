@@ -5,13 +5,9 @@
   <div class="scroll">
     <ol>
       {{#each games as |game|}}
-        {{#if game.score.integer?}}
         <li>
           <div class="col-xs-12">{{game.score}}</div>
         </li>
-      {{else}}
-      <p>No Scores at the moment.</p>
-      {{/if}}
       {{/each}}
     </ol>
   </div>

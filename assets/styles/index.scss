@@ -80,15 +80,11 @@ a {
   text-align: center;
   float: none;
   min-width: 300px;
-  margin-bottom: 50px;
+  height: 240px;
+  // margin-bottom: 50px;
 }
 
-.publicscore {
-  width: 100%;
-  border: 1px solid white;
-  border-radius: 10px;
-  background-color: rgba(179, 210, 221, 0.3);
-  height: 300px;
+.section-info {
   margin-bottom: 10px;
 }
 
@@ -97,19 +93,28 @@ a {
   border-radius: 10px;
   background-color: rgba(179, 210, 221, 0.3);
   min-width: 580px;
-  width: 100%;
-  height: 300px;
+  height: 240px;
   padding: 0 10px;
-  margin-bottom: 10px;
+  // margin-bottom: 10px;
   text-align: center;
+  margin: 0 auto;
+  float: none;
 }
 
-.personalcscore {
-  width: 100%;
+.instructions2 {
   border: 1px solid white;
   border-radius: 10px;
   background-color: rgba(179, 210, 221, 0.3);
-  height: 300px;
+  height: 240px;
+  padding: 0 10px;
+  // margin-bottom: 10px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.game-container {
+  margin: 0 auto;
+  float: right;
 }
 
 .gameboard {
@@ -117,6 +122,24 @@ a {
   display: table;
   margin: 0 auto;
 }
+
+.publicscore {
+  width: 100%;
+  border: 1px solid white;
+  border-radius: 10px;
+  background-color: rgba(179, 210, 221, 0.3);
+  height: 240px;
+  // margin-bottom: 10px;
+}
+
+.personalcscore {
+  width: 100%;
+  border: 1px solid white;
+  border-radius: 10px;
+  background-color: rgba(179, 210, 221, 0.3);
+  height: 240px;
+}
+
 
 #publicContent {
   font-family: myFirstFont;
@@ -129,36 +152,11 @@ a {
 
 .scroll {
   overflow: scroll;
-  height: 200px;
+  height: 130px;
 }
 
 #canvas {
   background-image: url('../../img/background.jpg');
-}
-@media only screen and (max-width: 768px) {
-    .publicscore {
-      float: none;
-      width: 100%;
-    }
-
-    .personalcscore {
-      float: none;
-      max-width: 100%;
-    }
-
-    .welcome {
-      text-decoration: none;
-      font-size: 20px;
-      width: 100%;
-    }
-
-    .gameimg {
-      width: 100%;
-    }
-
-    .instructions {
-      max-width: 100%;
-    }
 }
 
 #message {
@@ -168,6 +166,32 @@ a {
 .alert-danger {
   background-color: #eab9b9;
 }
+
+// @media only screen and (max-width: 768px) {
+//     .publicscore {
+//       float: none;
+//       width: 100%;
+//     }
+//
+//     .personalcscore {
+//       float: none;
+//       max-width: 100%;
+//     }
+//
+//     .welcome {
+//       text-decoration: none;
+//       font-size: 20px;
+//       width: 100%;
+//     }
+//
+//     .gameimg {
+//       width: 100%;
+//     }
+//
+//     .instructions {
+//       max-width: 100%;
+//     }
+// }
 
 .wrapper {
     width: 500px;
@@ -182,45 +206,60 @@ a {
 }
 
 #score {
-    float: right;
+    font-family: myFirstFont;
+    float: none;
     color: white;
     font-size: 2em;
 }
 
-#game-over, #game-over-overlay {
-    margin: auto;
+#start-game, #game-over, #game-overlay {
+    margin: 0;
     width: 500px;
     height: 500px;
     position: absolute;
+    margin-left: 15px;
+    padding-top: 25%;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     z-index: 1;
-    display: none;
+    // display: none;
 }
 
-#game-over-overlay {
+#game-overlay {
     background-color: black;
     opacity: .5;
 }
 
-#game-over {
+#start-game, #game-over {
     height: 200px;
     text-align: center;
     color: white;
 }
 
-#game-over h1 {
-    font-size: 3em;
-    font-family: sans-serif;
+aside {
+  width: 300px;
+  height: 300px;
 }
 
-#game-over button {
+#start-game h5 {
+    // font-size: 1.4em;
+    font-family: myFirstFont;
+}
+
+#game-over h2 {
+    // font-size: 2em;
+    font-family: myFirstFont;
+}
+
+#start-game, #game-over button {
     font-size: 1.5em;
+    font-family: myFirstFont;
 }
 
 .footer {
+  position: fixed;
   bottom: 0;
   width: 100%;
   height: 40px;
@@ -231,11 +270,10 @@ a {
 }
 
 .footer_a {
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-decoration: none;
 }
 
 .footer_a:hover {
-  font-family:  "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-decoration: none;
 }

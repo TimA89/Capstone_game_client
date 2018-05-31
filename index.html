@@ -97,55 +97,69 @@
       </nav>
       <!-- Users messages -->
       <p id="message"></p>
-      <div class="row">
-        <div class="col-xs-6 gameimg container">
-          <h3 class="welcome">Please <a class="welcome_a">SignUp</a> or <a class="welcome_a">SignIn</a> to play a game</h3>
-          <h3 class="statement">Alliens atacking your home planet and you are the last hope of human kind! We need you Hero!</h3>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12 container">
-          <div class="col-md-3 container">
-            <div class="personalcscore"></div>
-          </div>
-          <div class="col-md-6 container-fluid">
-            <div class="col-xs-12 container-fluid">
-              <div class="gameboard">
-                <canvas id="canvas" width="500" height="500" style="background-color: white"></canvas>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12 container">
-          <div class="col-md-3 container">
+      <aside class="col-md-3">
+        <div class="row">
+          <div class="col-md-12 container">
             <div class="publicscore"></div>
           </div>
-          <div class="col-md-6 container">
-            <div class="instructions">
-              <h1 class="info">Instructions:</h1>
+        </div>
+        <div class="row">
+          <div class="col-md-12 container">
+            <div class="personalcscore"></div>
+          </div>
+        </div>
+      </aside>
+      <main>
+        <section class="section-info game-section">
+          <div class="col-xs-6 gameimg container">
+            <h3 class="welcome">Please <a class="welcome_a">SignUp</a> or <a class="welcome_a">SignIn</a> to play a game</h3>
+            <h3 class="statement">Alliens attacking your home planet and you are the last hope of human kind! We need you Hero!</h3>
+        </div>
+      </section>
+        <section class="section-info">
+          <div class="col-xs-6 instructions container">
+              <h1 class="info" style="margin-top: 10px;">Instructions:</h1>
               <h3 class="info">Action keys:</h3>
               <h4 class="info">Move with <span class="key">Arrow keys</span> or <span class="key">W A S D</span></h4>
               <h4 class="info">Shoot with <span class="key">Space</span></h4>
-              <h4 class="info">Pause with <button type="button" class="btn btn-default btn-sm" id="pause">Pause</button> or <span class="key">P</span> key</h4>
-            </div>
+              <h4 class="info">Pause/Resume game with <span class="key">PAUSE</span> button<!--or <span class="key">P</span> key--></h4>
+              <br>
+              <!--4<h5 class="info" style="margin-top: 0;">Score:<div id="score">000000</div></h5> -->
           </div>
-        </div>
-      </div>
-      <!-- <div id="game-over-overlay">
-      </div>
-
-      <div id="game-over">
-        <h1>GAME OVER</h1>
-        <button id="play-again">Play Again</button>
-      </div>
+        </section>
+        <section class="section-game">
+            <div class="col-xs-9 game-container container">
+                <div class="col-xs-8 gameboard">
+                <div id="game-overlay">
+                </div>
+                <div id="start-game">
+                  <h3>Press When Ready to</h3>
+                  <button type="button" class="btn btn-primary btn-lg start">Play</button>
+                </div>
+                <div id="game-over">
+                  <h2>Game Over</h2>
+                  <button type="button" class="btn btn-primary btn-lg start">Play</button>
+                </div>
+                  <canvas id="canvas" width="500" height="500" style="background-color: black"></canvas>
+                </div>
+                <div class="col-xs-4 instructions2 container">
+                  <h3 class="info" style="margin-top: 10px;">Instructions:</h3>
+                  <h5 class="info">Action keys:</h5>
+                  <h6 class="info">Move with <span class="key">Arrow keys</span> or <span class="key">W A S D</span></h6>
+                  <h6 class="info">Shoot with <span class="key">Space</span></h6>
+                  <h6 class="info"><button type="button" class="btn btn-default btn-sm" id="pause">Pause</button> Pause/Resume game<!--or <span class="key">P</span> key--></h6>
+                  <br>
+                  <h6 class="info" style="margin-top: 0;">Score<div id="score"></div></h6>
+                </div>
+              </div>
+            </section>
+      </main>
 
       <div class="wrapper">
         <div id="score"></div>
       </div>
       <div style="display:none;">
-      </div> -->
+      </div>
 
       <footer class="footer">
         <!-- Copyright -->

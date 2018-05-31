@@ -6,6 +6,8 @@ const ui = require('./ui')
 
 const gameEvents = require('../game-actions/events')
 
+const game = require('../gamelogic')
+
 // events for signUp that creates new user and signs you in
 const onSignUp = function (event) {
   event.preventDefault()
@@ -37,6 +39,9 @@ const onSignIn = function (event) {
 
 // sign out event changes view to a not signed user
 const onSignOut = function (event) {
+  event.preventDefault()
+  game.reset()
+  game.togglePause()
   event.preventDefault()
   const data = getFormFields(event.target)
   api.signOut(data)

@@ -24,7 +24,43 @@ const getMyScores = function () {
   })
 }
 
+const getStart = function () {
+  return $.ajax({
+    url: config.apiUrl + '/games/',
+    method: 'POST',
+    headers: {
+      contentType: 'application/json',
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: {
+      'game': {
+        'score': 0,
+        'over': false
+      }
+    }
+  })
+}
+
+const gameUpdate = function (gameData) {
+  return $.ajax({
+    url: config.apiUrl + '/games/' + store.game.id,
+    method: 'PATCH',
+    headers: {
+      contentType: 'application/json',
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: {
+      'game': {
+        'score': gameData.score,
+        'over': gameData.over
+      }
+    }
+  })
+}
+
 module.exports = {
   getAllScores,
-  getMyScores
+  getMyScores,
+  getStart,
+  gameUpdate
 }
