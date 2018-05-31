@@ -1,3 +1,6 @@
+'use strict'
+
+const gameLogic = require('./gamelogic')
 let pressedKeys = {}
 // ties together keyCode of button with keys that pressed during game
 function setKey (event, status) {
@@ -16,7 +19,7 @@ function setKey (event, status) {
   } else if (code === 40) {
     key = 'DOWN'
   } else if (code === 80) {
-    key = 'P'
+    console.log(gameLogic)
   } else {
     key = String.fromCharCode(code)
   }

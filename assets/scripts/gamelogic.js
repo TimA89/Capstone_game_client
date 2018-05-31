@@ -1,4 +1,5 @@
 'use strict'
+
 // require event listener for keys
 const input = require('./input')
 
@@ -72,10 +73,6 @@ const handleInput = function () {
 
   if (input.isDown('RIGHT') || input.isDown('d')) {
     posX += heroSpeed
-  }
-
-  if (input.isDown('P')) {
-    togglePause()
   }
 
   if (input.isDown('SPACE') && Date.now() - lastFire > 100) {
@@ -159,7 +156,6 @@ const Explosion = function (x, y, index) {
 const render = function () {
   // clears a content after movement
   ctx.clearRect(0, 0, canvas.width, canvas.height)
-  // hero()
   handleInput()
   updateEntities()
 }
@@ -251,6 +247,7 @@ const checkCollisions = function () {
   }
 }
 let pause = false
+
 const togglePause = function () {
   pause = !pause
   if (!pause) {
@@ -278,4 +275,7 @@ const game = function () {
   }
 }
 
-module.exports = game
+module.exports = {
+  game: game,
+  togglePause: togglePause
+}

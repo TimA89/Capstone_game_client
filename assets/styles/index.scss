@@ -132,6 +132,9 @@ a {
   height: 200px;
 }
 
+#canvas {
+  background-image: url('../../img/background.jpg');
+}
 @media only screen and (max-width: 768px) {
     .publicscore {
       float: none;
