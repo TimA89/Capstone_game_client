@@ -4,6 +4,8 @@ const api = require('./api')
 
 const ui = require('./ui')
 
+const gameEvents = require('../game-actions/events')
+
 // events for signUp that creates new user and signs you in
 const onSignUp = function (event) {
   event.preventDefault()
@@ -19,6 +21,7 @@ const onSignUp = function (event) {
 const onAutoSignIn = function (data) {
   api.signIn(data)
     .then(ui.signInSuccess)
+    .then(() => gameEvents.onMyAllScores())
     .catch(ui.signInFailure)
 }
 
@@ -28,6 +31,7 @@ const onSignIn = function (event) {
   const data = getFormFields(event.target)
   api.signIn(data)
     .then(ui.signInSuccess)
+    .then(() => gameEvents.onMyAllScores())
     .catch(ui.signInFailure)
 }
 

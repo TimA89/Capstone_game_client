@@ -1,0 +1,18 @@
+<div id="publicContent" class="content" data-id="{{todo._id}}">
+  <div style="text-align: center;">
+    <h4>Best Score:</h4>
+  </div>
+  <div class="scroll">
+    <ol>
+      {{#each games as |game|}}
+        {{#if game.score.integer?}}
+        <li>
+          <div class="col-xs-12">{{game.score}}</div>
+        </li>
+      {{else}}
+      <p>No Scores at the moment.</p>
+      {{/if}}
+      {{/each}}
+    </ol>
+  </div>
+</div>

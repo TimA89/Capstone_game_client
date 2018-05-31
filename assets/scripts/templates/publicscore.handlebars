@@ -1,0 +1,25 @@
+<div id="publicContent" class="content" data-id="{{todo._id}}">
+  <div style="text-align: center;">
+    <h4>Best Score:</h4>
+  </div>
+  <div class="row">
+    <div class="col-xs-6">
+      <h5 style="text-align: center;">Score</h5>
+    </div>
+    <div class="col-xs-6">
+      <h5 style="text-align: center;">User</h5>
+    </div>
+  </div>
+  <div class="scroll">
+    <ol>
+      {{#each games as |game|}}
+      <li>
+        <div class="col-xs-12">
+          <div class="col-xs-6">{{game.score}}</div>
+          <div class="col-xs-6">{{game.user.email}}</div>
+        </div>
+      </li>
+      {{/each}}
+    </ol>
+  </div>
+</div>

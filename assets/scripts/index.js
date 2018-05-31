@@ -4,7 +4,7 @@
 // const game = require('./gamelogic')
 
 const authEvents = require('./user-actions/events')
-
+const gameEvents = require('./game-actions/events')
 // // requiring off all pix
 // const alien1 = require('../../img/alien1.png')
 // const alien2 = require('../../img/alien2.png')
@@ -29,16 +29,13 @@ const authEvents = require('./user-actions/events')
 // when all pix loaded starting game
 // picLoader.onReady(game)
 
-// handlebars uploads
-const navHandlebars = require('./templates/nav.handlebars')
-const navHTML = navHandlebars()
-
-const homePageHandlebars = require('./templates/homepage.handlebars')
-const homeHTML = homePageHandlebars()
+$('.a-sign-up').show()
+$('.a-sign-in').show()
+$('.gameimg').show()
+// $('.personalcscore').hide()
+$('.sign-out').hide()
+$('.a-change-pass').hide()
 $(() => {
-  $('body').prepend(navHTML)
-  $('.gamemode').hide()
-  $('body').prepend(homeHTML)
-
   authEvents.addHandlers()
+  gameEvents.onGetAllScores()
 })
