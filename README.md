@@ -52,6 +52,7 @@ Game:
 - Change into the new directory.
 - Run npm install.
 - Create and checkout a new branch.
+- grunt serve to spin up a server
 - Open index.html to view HTML code
 - assets/scripts contains javascript code
 - assets/scripts/index.js main javascript function for homepage
