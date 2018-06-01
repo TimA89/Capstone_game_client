@@ -301,7 +301,7 @@ const game = function () {
 }
 // starting game
 const start = function () {
-  resetGame()
+  reset()
   game()
 }
 
@@ -312,7 +312,7 @@ const gameOver = function () {
   gameUpdateEvents.onGetUpdate(gameData)
 }
 
-const resetGame = function () {
+const reset = function () {
   ctx.clearRect(0, 0, canvas.width, canvas.height)
   pause = false
   gameData.score = 0
@@ -329,6 +329,6 @@ module.exports = {
   start,
   togglePause,
   gameData,
-  resetGame,
+  reset,
   pause
 }
