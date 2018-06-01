@@ -8,9 +8,9 @@ displaying high scores Im using data provided by GET request to display
 information with handlebars. Enjoy Playing!
 
 ## Other Links
-[Space Plast API repo](https://github.com/TimA89/Capstone_game_api)
-[Deployed Front End](http://timabuladze.com/Capstone_game_client/)
-[Deployed Back End](https://capstone-game.herokuapp.com/)
+- [Space Plast API repo](https://github.com/TimA89/Capstone_game_api)
+- [Deployed Front End](http://timabuladze.com/Capstone_game_client/)
+- [Deployed Back End](https://capstone-game.herokuapp.com/)
 
 ## Technologies Used
 - Javascript
