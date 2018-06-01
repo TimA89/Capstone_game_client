@@ -313,7 +313,7 @@ const gameOver = function () {
 }
 
 const reset = function () {
-  // ctx.clearRect(0, 0, canvas.width, canvas.height)
+  ctx.clearRect(0, 0, canvas.width, canvas.height)
   pause = false
   gameData.score = 0
   gameData.over = false
@@ -322,7 +322,7 @@ const reset = function () {
   bullets = []
   posX = canvas.width / 2
   posY = 440
-  ctx.clearRect(0, 0, canvas.width, canvas.height)
+  // ctx.clearRect(0, 0, canvas.width, canvas.height)
 }
 
 module.exports = {
