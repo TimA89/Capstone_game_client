@@ -44,8 +44,8 @@ const onSignIn = function (event) {
 // sign out event changes view to a not signed user
 const onSignOut = function (event) {
   event.preventDefault()
-  game.togglePause()
   game.reset()
+  game.pause = true
   const data = getFormFields(event.target)
   api.signOut(data)
     .then(ui.signOutSuccess)

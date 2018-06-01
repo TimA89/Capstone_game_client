@@ -329,5 +329,6 @@ module.exports = {
   start,
   togglePause,
   gameData,
-  reset
+  reset,
+  pause
 }
