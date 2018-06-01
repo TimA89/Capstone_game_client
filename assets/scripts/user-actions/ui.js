@@ -12,6 +12,7 @@ const signUpSuccess = (data) => {
 const signUpFailure = () => {
   setTimeout(() => $('.failedmessage1').text('Failed to Sign Up'), 300)
   $('.failedmessage1').css('text-align', 'center')
+  $('form').trigger('reset')
 }
 
 const signInSuccess = (data) => {
@@ -37,6 +38,7 @@ const signInFailure = () => {
   $('.failedmessage2').text('Failed to Sign In')
   $('.failedmessage2').css('text-align', 'center')
   setTimeout(() => $('.failedmessage2').html(''), 3000)
+  $('form').trigger('reset')
 }
 
 const signOutSuccess = () => {
