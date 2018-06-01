@@ -45,7 +45,6 @@ User stories:
 [WireFrame](https://imgur.com/VqL8qdp)
 
 Game:
-<img src="https://imgur.com/wGWs3cp">
 <img src="img/SpaceBlast.png">
 
 ## Instrucyions
