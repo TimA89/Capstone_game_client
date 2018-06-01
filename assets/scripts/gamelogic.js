@@ -4,10 +4,13 @@
 const input = require('./input')
 
 // require event listener for keys
-const api = require('./game-actions/api')
+// const api = require('./game-actions/api')
 
 // require event listener for keys
-const ui = require('./game-actions/ui')
+// const ui = require('./game-actions/ui')
+
+// require event handlers
+const gameUpdateEvents = require('./game-actions/update_events')
 
 // require all pictures
 const alien1 = require('../../img/alien1.png')
@@ -273,17 +276,14 @@ const checkCollisions = function () {
 let pause = false
 
 const togglePause = function () {
-  console.log('toggled')
   pause = !pause
   if (!pause) {
-    console.log('gameToggle')
     game()
   }
 }
 
 // main loop of the game
 const game = function () {
-  console.log('game is')
   if (!pause) {
     // creates a loop for animation
     enemies()
@@ -301,9 +301,7 @@ const game = function () {
 }
 // starting game
 const start = function () {
-  console.log('startInner')
-  pause = false
-  console.log('gameStart')
+  reset()
   game()
 }
 
@@ -311,14 +309,11 @@ const start = function () {
 const gameOver = function () {
   pause = true
   gameData.over = true
-  api.gameUpdate(gameData)
-    .then(ui.gameUpdateSuccess)
-    .catch(ui.gameUpdateFailure)
+  gameUpdateEvents.onGetUpdate(gameData)
 }
 
 const reset = function () {
   ctx.clearRect(0, 0, canvas.width, canvas.height)
-  console.log('1')
   pause = false
   gameData.score = 0
   gameData.over = false
@@ -328,13 +323,11 @@ const reset = function () {
   posX = canvas.width / 2
   posY = 440
   ctx.clearRect(0, 0, canvas.width, canvas.height)
-  console.log('2')
 }
 
 module.exports = {
   start,
   togglePause,
   gameData,
-  reset,
-  gameOver
+  reset
 }

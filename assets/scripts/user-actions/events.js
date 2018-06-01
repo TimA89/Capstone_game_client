@@ -4,7 +4,9 @@ const api = require('./api')
 
 const ui = require('./ui')
 
-const gameEvents = require('../game-actions/events')
+// const gameEvents = require('../game-actions/events')
+
+const gameUpdateEvents = require('../game-actions/update_events')
 
 const game = require('../gamelogic')
 
@@ -23,7 +25,8 @@ const onSignUp = function (event) {
 const onAutoSignIn = function (data) {
   api.signIn(data)
     .then(ui.signInSuccess)
-    .then(() => gameEvents.onMyAllScores())
+    .then(() => gameUpdateEvents.onGetAllScores())
+    .then(() => gameUpdateEvents.onMyAllScores())
     .catch(ui.signInFailure)
 }
 
@@ -33,15 +36,16 @@ const onSignIn = function (event) {
   const data = getFormFields(event.target)
   api.signIn(data)
     .then(ui.signInSuccess)
-    .then(() => gameEvents.onMyAllScores())
+    .then(() => gameUpdateEvents.onGetAllScores())
+    .then(() => gameUpdateEvents.onMyAllScores())
     .catch(ui.signInFailure)
 }
 
 // sign out event changes view to a not signed user
 const onSignOut = function (event) {
   event.preventDefault()
-  game.reset()
   game.togglePause()
+  game.reset()
   const data = getFormFields(event.target)
   api.signOut(data)
     .then(ui.signOutSuccess)

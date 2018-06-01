@@ -108,7 +108,7 @@ a {
   height: 240px;
   padding: 0 10px;
   // margin-bottom: 10px;
-  text-align: center;
+  text-align: left;
   margin: 0 auto;
 }
 
@@ -150,9 +150,16 @@ a {
   animation-iteration-count: infinite;
 }
 
-.scroll {
+.scroll1 {
   overflow: scroll;
-  height: 130px;
+  height: 140px;
+  padding-left: 55px;
+}
+
+.scroll2 {
+  overflow: scroll;
+  height: 190px;
+  padding-left: 55px;
 }
 
 #canvas {
@@ -199,17 +206,11 @@ a {
     margin-top: 2em;
 }
 
-#instructions {
-    float: left;
-    font-family: sans-serif;
-    color: #757575;
-}
-
 #score {
     font-family: myFirstFont;
     float: none;
-    color: white;
-    font-size: 2em;
+    color: red;
+    // font-size: 1em;
 }
 
 #start-game, #game-over, #game-overlay {

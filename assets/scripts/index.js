@@ -5,6 +5,7 @@ const authEvents = require('./user-actions/events')
 
 // event handlers for game api's
 const gameEvents = require('./game-actions/events')
+const gameUpdateEvents = require('./game-actions/update_events')
 
 // require('./inputP')
 
@@ -31,6 +32,6 @@ $(() => {
   ])
 
   authEvents.addHandlers()
-  gameEvents.onGetAllScores()
+  gameUpdateEvents.onGetAllScores()
   gameEvents.gameHandlers()
 })

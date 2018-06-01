@@ -41,21 +41,43 @@ const getStartSuccess = (data) => {
   store.game = data.game
   $('#start-game').hide()
   $('#game-overlay').hide()
+  $('#game-over').hide()
+  $('#message').html(`<div class="alert alert-success" role="alert">Good Luck!</div>`)
+  $('#message').css('text-align', 'center')
+  setTimeout(() => $('#message').html(''), 3000)
 }
 
 const getStartFailure = () => {
   $('#message').html(`<div class="alert alert-danger" role="alert">Something went wrong. Our team is working on fixing the issue</div>`)
   $('#message').css('text-align', 'center')
+  setTimeout(() => $('#message').html(''), 3000)
 }
 
 const gameUpdateSuccess = () => {
-  $('#game-oerlay').show()
-  $('#game-0ver').show()
+  $('#message').html(`<div class="alert alert-success" role="alert">Grest Job! Try Again</div>`)
+  $('#message').css('text-align', 'center')
+  setTimeout(() => $('#message').html(''), 3000)
+  $('#game-overlay').show()
+  $('#game-over').show()
 }
 
 const gameUpdateFailure = () => {
-  console.log('no')
+  $('#message').html(`<div class="alert alert-danger" role="alert">Something went wrong. Our team is working on fixing the issue</div>`)
+  $('#message').css('text-align', 'center')
+  setTimeout(() => $('#message').html(''), 3000)
 }
+
+// const pauseGameSuccess = () => {
+//   $('#message').html(`<div class="alert alert-success" role="alert">Paused</div>`)
+//   $('#message').css('text-align', 'center')
+//   setTimeout(() => $('#message').html(''), 3000)
+// }
+//
+// const pauseGameFailure = () => {
+//   $('#message').html(`<div class="alert alert-danger" role="alert">Something went wrong. Our team is working on fixing the issue</div>`)
+//   $('#message').css('text-align', 'center')
+//   setTimeout(() => $('#message').html(''), 3000)
+// }
 
 module.exports = {
   getAllScoresSuccess,
@@ -66,4 +88,6 @@ module.exports = {
   getStartFailure,
   gameUpdateSuccess,
   gameUpdateFailure
+  // pauseGameSuccess,
+  // pauseGameFailure
 }

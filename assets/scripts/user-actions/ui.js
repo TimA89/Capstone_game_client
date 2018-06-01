@@ -1,13 +1,5 @@
 // $('#message').html(`<div class="alert alert-danger" role="alert">You have failed sign in!</div>`)
 const store = require('../store')
-const picloader = require('../picloader.js')
-
-// const showNotesTemplate = require('./templates/note-listing.handlebars')
-
-// const showMyNotesTemplate = require('./templates/my-note-listing.handlebars')
-
-// const eve = require('./events.js')
-// const api = require('./api.js')
 
 const signUpSuccess = (data) => {
   $('#modal1').modal('toggle')
