@@ -301,7 +301,7 @@ const game = function () {
 }
 // starting game
 const start = function () {
-  reset()
+  resetGame()
   game()
 }
 
@@ -312,7 +312,7 @@ const gameOver = function () {
   gameUpdateEvents.onGetUpdate(gameData)
 }
 
-const reset = function () {
+const resetGame = function () {
   ctx.clearRect(0, 0, canvas.width, canvas.height)
   pause = false
   gameData.score = 0
@@ -322,13 +322,13 @@ const reset = function () {
   bullets = []
   posX = canvas.width / 2
   posY = 440
-  // ctx.clearRect(0, 0, canvas.width, canvas.height)
+  ctx.clearRect(0, 0, canvas.width, canvas.height)
 }
 
 module.exports = {
   start,
   togglePause,
   gameData,
-  reset,
+  resetGame,
   pause
 }
