@@ -13,6 +13,7 @@ const signUpFailure = () => {
   setTimeout(() => $('.failedmessage1').text('Failed to Sign Up'), 300)
   $('.failedmessage1').css('text-align', 'center')
   $('form').trigger('reset')
+  setTimeout(() => $('.failedmessage1').html(''), 5000)
 }
 
 const signInSuccess = (data) => {
