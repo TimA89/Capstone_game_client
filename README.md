@@ -47,7 +47,7 @@ User stories:
 Game:
 <img src="img/SpaceBlast.png">
 
-## Instrucyions
+## Instructions
 - Fork and clone this repository.
 - Change into the new directory.
 - Run npm install.
