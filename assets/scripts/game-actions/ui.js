@@ -39,7 +39,7 @@ const getMyScoresFailure = () => {
 
 const getStartSuccess = (data) => {
   store.game = data.game
-  $('.pause_score').show()
+  $('.pause_div').show()
   $('#start-game').hide()
   $('#game-overlay').hide()
   $('#game-over').hide()
@@ -58,7 +58,7 @@ const gameUpdateSuccess = () => {
   $('#message').html(`<div class="alert alert-success" role="alert">Grest Job! Try Again</div>`)
   $('#message').css('text-align', 'center')
   setTimeout(() => $('#message').html(''), 3000)
-  $('.pause_score').hide()
+  $('.pause_div').hide()
   $('#game-overlay').show()
   $('#game-over').show()
 }

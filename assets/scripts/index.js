@@ -17,7 +17,7 @@ $('.personalcscore').hide()
 $('.section-game').hide()
 $('.sign-out').hide()
 $('.a-change-pass').hide()
-$('.pause_score').hide()
+$('.pause_div').hide()
 $(() => {
   const picLoader = require('./picloader')
   const alien1 = require('../../img/alien1.png')
