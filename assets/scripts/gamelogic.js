@@ -101,13 +101,13 @@ const handleInput = function () {
     lastFire = Date.now()
   }
 
-  if (input.isDown('SPACE') && Date.now() - lastFire > 100) {
-    const bulletPosX = posX + heroWidth / 2
-    const bulletPosY = posY
-    bullets.push(new Bullet(bulletPosX, bulletPosY))
-    // filters all bullets that have been added to array, instead of 100 per second only 10 added
-    lastFire = Date.now()
-  }
+  // if (input.isDown('SPACE') && Date.now() - lastFire > 100) {
+  //   const bulletPosX = posX + heroWidth / 2
+  //   const bulletPosY = posY
+  //   bullets.push(new Bullet(bulletPosX, bulletPosY))
+  //   // filters all bullets that have been added to array, instead of 100 per second only 10 added
+  //   lastFire = Date.now()
+  // }
 }
 
 const hero = function () {
