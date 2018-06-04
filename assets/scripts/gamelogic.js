@@ -15,6 +15,7 @@ const gameUpdateEvents = require('./game-actions/update_events')
 // require all pictures
 const alien1 = require('../../img/alien1.png')
 // const alien2 = require('../../img/alien2.png')
+const mike = require('../../img/mike.png')
 const hero1 = require('../../img/hero1.png')
 // const hero2 = require('../../img/hero2.png')
 const blast = require('../../img/blast.png')
@@ -153,7 +154,7 @@ const Enemy = function (x, y) {
 
   this.draw = function () {
     const enemyLook = new Image()
-    enemyLook.src = alien1
+    enemyLook.src = mike
     ctx.drawImage(enemyLook, this.x, this.y, enemyWidth, enemyHeight)
   }
 

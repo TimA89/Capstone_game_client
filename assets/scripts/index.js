@@ -20,12 +20,14 @@ $('.a-change-pass').hide()
 $('.pause_div').hide()
 $(() => {
   const picLoader = require('./picloader')
+  const mike = require('../../img/mike.png')
   const alien1 = require('../../img/alien1.png')
   const hero1 = require('../../img/hero1.png')
   const blast = require('../../img/blast.png')
   const explosion1 = require('../../img/explosion1.png')
 
   picLoader.load([
+    mike,
     alien1,
     hero1,
     blast,
