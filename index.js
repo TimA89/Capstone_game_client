@@ -11,6 +11,7 @@ require('./assets/scripts/index.js')
 require('./assets/styles/index.scss')
 
 // pix
+require('./img/mike.png')
 require('./img/alien1.png')
 require('./img/alien2.png')
 require('./img/hero1.png')
