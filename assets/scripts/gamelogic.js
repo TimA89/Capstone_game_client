@@ -154,7 +154,7 @@ const Enemy = function (x, y) {
 
   this.draw = function () {
     const enemyLook = new Image()
-    enemyLook.src = mike
+    enemyLook.src = alien1
     ctx.drawImage(enemyLook, this.x, this.y, enemyWidth, enemyHeight)
   }
 
