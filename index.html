@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Space Blast</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <!-- Begining of nav bar -->
+      <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <!-- Brand name -->
+            <a class="navbar-brand"><div id="brand">Space Blast</div></a>
+          </div>
+          <!-- All navigation to the right side -->
+          <ul class="nav navbar-nav navbar-right">
+            <!-- Explanation of Sign Up anchor-->
+            <li><a data-toggle="modal" data-target="#modal1" class="a-sign-up"> Sign Up</a></li>
+            <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="modalLabel">Sign Up!</h4>
+                  </div>
+                  <div class="modal-body">
+                    <form id="sign-up">
+                      <input required class="user-account" type="email" name="credentials[email]" id="sign-up-email" placeholder="Email">
+                      <input required class="user-account" type="password" name="credentials[password]" id="sign-up-password" placeholder="Password">
+                      <input required class="user-account" type="password" name="credentials[password_confirmation]" id="sign-up-password-confirmation" placeholder="Confirm password">
+                      <input type="submit" name="submit" value="Sign up">
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <h2 class="failedmessage1 fm"></h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Explanation of Sign In modal-->
+            <li><a data-toggle="modal" data-target="#modal2" class="a-sign-in"> Sign In</a></li>
+            <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="modalLabel">Sign In!</h4>
+                  </div>
+                  <div class="modal-body">
+                    <form id="sign-in">
+                      <input required class="user-account" type="email" name="credentials[email]" id="sign-in-email" placeholder="Email">
+                      <input required class="user-account" type="password" name="credentials[password]" id="sign-in-password" placeholder="Password">
+                      <input type="submit" name="submit" value="Sign in!">
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <h2 class="failedmessage2 fm"></h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+                <!-- Explanation on Sign Out -->
+                <li>
+                  <a class="sign-out"> Sign Out</a>
+                </li>
+                <!-- Explanation on Password Change anchor -->
+                <li><a data-toggle="modal" data-target="#modal3" class="a-change-pass"> Change Password</a></li>
+                <div class="modal fade" id="modal3" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="modalLabel">Change Password</h4>
+                      </div>
+                      <div class="modal-body">
+                        <form id="change_pass">
+                          <input required type="password" name="passwords[old]" placeholder="Old Password">
+                          <input required type="password" name="passwords[new]" placeholder="New Password">
+                          <input type="submit" value="Change Password ">
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                        <h2 class="failedmessage3 fm"></h2>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+          </ul>
+        </div>
+      </nav>
+      <!-- Users messages -->
+      <p id="message"></p>
+      <aside class="col-md-3">
+        <div class="row">
+          <div class="col-md-12 container">
+            <div class="publicscore"></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 container">
+            <div class="personalcscore"></div>
+          </div>
+        </div>
+      </aside>
+      <main>
+        <section class="section-info game-section">
+          <div class="col-xs-6 gameimg container">
+            <h3 class="welcome">Please <a  data-toggle="modal" data-target="#modal1" class="a-sign-up welcome_a">SignUp</a> or <a data-toggle="modal" data-target="#modal2" class="a-sign-in welcome_a">SignIn</a> to play a game</h3>
+            <h3 class="statement">Aliens attacking your home planet and you are the last hope of human kind! We need you Hero!</h3>
+        </div>
+      </section>
+        <section class="section-info">
+          <div class="col-xs-6 instructions container">
+              <h1 class="info" style="margin-top: 10px;">Instructions:</h1>
+              <h3 class="info">Action keys:</h3>
+              <h4 class="info">Move with <span class="key">Arrow keys</span> or <span class="key">W A S D</span></h4>
+              <h4 class="info">Shoot with <span class="key">F</span></h4>
+              <h4 class="info">Pause/Resume game with <span class="key">PAUSE</span> button<!--or <span class="key">P</span> key--></h4>
+              <br>
+              <!--4<h5 class="info" style="margin-top: 0;">Score:<div id="score">000000</div></h5> -->
+          </div>
+        </section>
+        <section class="section-game">
+            <div class="col-xs-9 game-container container">
+                <div class="col-xs-8 gameboard">
+                <div id="game-overlay">
+                </div>
+                <div id="start-game">
+                  <h3>Press When Ready to</h3>
+                  <button type="button" class="btn btn-primary btn-lg start">Play</button>
+                </div>
+                <div id="game-over">
+                  <h2>Game Over</h2>
+                  <button type="button" class="btn btn-primary btn-lg start">Play</button>
+                </div>
+                  <canvas id="canvas" width="500" height="500" style="background-color: black"></canvas>
+                </div>
+                <div class="col-xs-4 instructions2 container">
+                  <h3 class="info" style="margin-top: 10px;">Instructions:</h3>
+                  <h5 class="info">Action keys:</h5>
+                  <h6 class="info">Move with <span class="key">Arrow keys</span> or <span class="key">W A S D</span></h6>
+                  <h6 class="info">Shoot with <span class="key">F</span></h6>
+                  <div class="pause_div">
+                    <h6 class="info"><button type="button" class="btn btn-default btn-sm" id="pause">Pause</button> Pause/Resume game<!--or <span class="key">P</span> key--></h6>
+                    <!-- <h6 class="info"><button type="button" class="btn btn-default btn-sm start">New Game</button> Start a New Game</h6> -->
+                    <!-- <br> -->
+                  </div>
+                    <h4><span class="info" style="margin-top: 0;">Score:</span><span id="score"></span></h4>
+                </div>
+              </div>
+            </section>
+      </main>
+
+      <footer class="footer">
+        <!-- Copyright -->
+        © 2018 Copyright:
+        <a href="http://timabuladze.com/" class="footer_a"> TimAbuladze.com</a>
+        <!-- Copyright -->
+      </footer>
+    </body>
+</html>
